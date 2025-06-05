@@ -1,138 +1,113 @@
-/* Estilo geral */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #1a1a1d, #2e2e31);
+  color: #f1f1f1;
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-/* Container principal */
+h1 {
+  color: #00f9ff;
+  text-shadow: 0 0 10px #00f9ff;
+  margin-bottom: 40px;
+}
+
 .main-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
-/* Título principal */
-h1 {
-  color: #333;
-}
-
-/* Layout flexível para os dois containers */
 .flex-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-/* Containers estilizados */
+/* Cartões com estilo neomórfico */
 .form-container, .equipes-container {
   flex: 1;
-  background-color: #d0e3ff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background: #26262a;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow:
+    8px 8px 20px #1c1c1f,
+    -8px -8px 20px #2f2f34;
   min-width: 45%;
 }
 
-/* Formulário */
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-/* Inputs e botões */
-.form input, .form button {
+/* Estilo para os inputs e textarea */
+textarea, input[type="number"] {
   width: 90%;
   max-width: 400px;
-  box-sizing: border-box;
-  font-size: 16px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Input numérico para número de equipes */
-.form-container input[type="number"] {
-  text-align: center;
-  width: 50%;
-  max-width: 100px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #007bff;
-  border-radius: 5px;
-  background-color: white; /* Garante que o fundo não esteja transparente */
-  appearance: textfield; /* Remove setas padrão em alguns navegadores */
-}
-
-
-/* Botão */
-button {
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-  padding: 12px;
-  border-radius: 5px;
+  padding: 15px;
+  background: #1f1f22;
+  color: #ffffff;
   border: none;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: inset 4px 4px 10px #1a1a1d, inset -4px -4px 10px #2e2e31;
+  resize: none;
+}
+
+button {
+  background: #00f9ff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00f9ff, 0 0 40px #00f9ff;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: #0ff;
+  box-shadow: 0 0 15px #00f9ff, 0 0 60px #00f9ff;
+  transform: scale(1.05);
 }
 
-/* Lista de nomes e equipes */
-.nomes-list, .equipe ul {
-  list-style: none; /* Remove os bullets (•) */
-  padding: 0;
-  margin: 0;
-  text-align: left; /* Agora os nomes ficam alinhados à esquerda */
-}
-
-/* Estilo dos itens da lista */
 .nomes-list li, .equipe ul li {
-  background-color: white;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 5px;
-}
-
-/* Bloco de equipes */
-.equipe {
-  background-color: #f3f3f3;
+  background: #1f1f22;
   padding: 10px;
-  border-radius: 8px;
-  margin-top: 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  box-shadow: inset 2px 2px 5px #1a1a1d, inset -2px -2px 5px #2e2e31;
 }
 
-/* Navegação */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.equipe {
+  background-color: #2a2a2e;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow:
+    6px 6px 15px #1c1c1f,
+    -6px -6px 15px #2f2f34;
+}
+
+/* Título das seções */
+h2 {
+  color: #fff;
+  text-shadow: 0 0 5px #00f9ff;
   margin-bottom: 20px;
 }
 
-nav a {
-  text-decoration: none;
-  padding: 10px 15px;
-  background: #007bff;
-  color: white;
-  border-radius: 5px;
-  transition: background 0.3s;
+/* Botões adicionais */
+.btn-novo-sorteio {
+  background-color: #28a745;
+  box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
 }
 
-nav a:hover {
-  background: #0056b3;
+.btn-resetar-tudo {
+  background-color: #dc3545;
+  box-shadow: 0 0 10px #dc3545, 0 0 20px #dc3545;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
   .flex-container {
     flex-direction: column;
@@ -141,53 +116,5 @@ nav a:hover {
 
   .form-container, .equipes-container {
     width: 90%;
-    min-width: unset;
-  }
-
-  .form input, .form button {
-    width: 100%;
-    max-width: unset;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
   }
 }
-
-.btn-novo-sorteio {
-  background-color: #28a745; /* Verde para indicar um novo sorteio */
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 10px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.btn-novo-sorteio:hover {
-  background-color: #218838;
-}
-
-.btn-resetar-tudo {
-  background-color: #dc3545; /* Vermelho para resetar tudo */
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 10px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.btn-resetar-tudo:hover {
-  background-color: #a71d2a;
-}
-

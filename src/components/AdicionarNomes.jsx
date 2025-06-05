@@ -1,22 +1,43 @@
-// AdicionarNomes.js - Componente para adicionar nomes
+// AdicionarNomes.jsx
 import { useState, useContext } from "react";
 import { EquipesContext } from "./EquipesContext";
 
 const AdicionarNomes = () => {
   const { adicionarNome } = useContext(EquipesContext);
-  const [nome, setNome] = useState("");
+  const [entrada, setEntrada] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleAdicionarTodos = (e) => {
     e.preventDefault();
-    if (nome.trim() === "") return;
-    adicionarNome(nome);
-    setNome("");
+    const nomes = entrada
+      .split("\n")
+      .map((nome) => nome.trim())
+      .filter((nome) => nome !== "");
+
+    nomes.forEach(adicionarNome);
+    setEntrada("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Digite um nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
-      <button type="submit">Adicionar Nome</button>
+    <form onSubmit={handleAdicionarTodos}>
+      <label style={{ fontWeight: "bold", marginBottom: "5px", display: "block" }}>
+        Cole os nomes abaixo (um por linha):
+      </label>
+      <textarea
+        rows="10"
+        placeholder="Ex: João\nMaria\nPedro"
+        value={entrada}
+        onChange={(e) => setEntrada(e.target.value)}
+        style={{
+          width: "100%",
+          padding: "10px",
+          fontSize: "16px",
+          resize: "vertical",
+          boxSizing: "border-box",
+        }}
+      />
+      <button type="submit" style={{ marginTop: "10px", padding: "8px 16px", fontSize: "16px" }}>
+        Adicionar Todos
+      </button>
     </form>
   );
 };

@@ -1,22 +1,74 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(145deg, #1a1a1d, #2e2e31);
-  color: #f1f1f1;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+/* Paleta Sofisticada - Sorteador de Equipes */
+:root {
+  --cor-primaria: #2c3e50;
+  --cor-secundaria: #e67e22;
+  --cor-fundo: #f4f4f4;
+  --cor-superficie: #ffffff;
+  --cor-texto-principal: #1c1c1c;
+  --cor-texto-secundario: #7f8c8d;
+  --cor-botao-hover: #34495e;
+  --cor-sucesso: #27ae60;
 }
 
-h1 {
-  color: #00f9ff;
-  text-shadow: 0 0 10px #00f9ff;
-  margin-bottom: 40px;
+body {
+  font-family: "Inter";
+  background: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--cor-primaria);
 }
 
 .main-container {
   max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 0;
+  background: var(--cor-superficie);
+  border-radius: 18px;
+}
+
+.logo-container {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 600px;
+  align-items: center;
+  border-bottom: 1px solid var(--cor-texto-secundario);
+}
+
+.logo-container img {
+  width: 125px;
+  height: auto;
+  margin-bottom: 0;
+  transition: transform 0.3s;
+}
+
+fieldset {
+  width: 100%;
+  margin: 0;
+}
+
+header {
+  margin: 10px;
+}
+
+header h1 {
+  font-size: 2.3rem;
+  margin: 0;
+  font-weight: bold;
+  margin-top: 25px;
+  justify-content: start;
+  margin-bottom: 0;
+}
+
+header p {
+  color: #111827;
 }
 
 .flex-container {
@@ -24,87 +76,78 @@ h1 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
+  margin: 0;
   flex-wrap: wrap;
 }
 
-/* Cartões com estilo neomórfico */
-.form-container, .equipes-container {
-  flex: 1;
-  background: #26262a;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow:
-    8px 8px 20px #1c1c1f,
-    -8px -8px 20px #2f2f34;
-  min-width: 45%;
+.lado-a-lado {
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
 }
 
 /* Estilo para os inputs e textarea */
-textarea, input[type="number"] {
+textarea,
+input[type="number"] {
   width: 90%;
-  max-width: 400px;
-  padding: 15px;
-  background: #1f1f22;
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  margin: 10px 0;
-  box-shadow: inset 4px 4px 10px #1a1a1d, inset -4px -4px 10px #2e2e31;
-  resize: none;
+  background: #f9f9f9;
+  border: 1px solid var(--cor-primaria);
+  color: var(--cor-texto-principal);
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.form-container,
+.equipes-container {
+  margin: 10px;
+}
+
+input[type="number"] {
+  width: 95%;
 }
 
 button {
-  background: #00f9ff;
-  color: #000;
-  font-weight: bold;
+  background: var(--cor-secundaria);
+  color: #fff;
   border: none;
-  padding: 12px 25px;
-  border-radius: 10px;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: bold;
+  transition: background 0.2s;
   cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 0 10px #00f9ff, 0 0 40px #00f9ff;
+  margin-top: 10px;
 }
 
 button:hover {
-  background: #0ff;
-  box-shadow: 0 0 15px #00f9ff, 0 0 60px #00f9ff;
-  transform: scale(1.05);
+  background: var(--cor-botao-hover);
 }
 
-.nomes-list li, .equipe ul li {
-  background: #1f1f22;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 5px 0;
-  box-shadow: inset 2px 2px 5px #1a1a1d, inset -2px -2px 5px #2e2e31;
+.nomes-list li,
+.equipe ul li {
+  background: #f9f9f9;
+  color: var(--cor-texto-principal);
+  border-left: 4px solid var(--cor-primaria);
+  margin-bottom: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 
 .equipe {
-  background-color: #2a2a2e;
-  padding: 15px;
-  border-radius: 12px;
-  margin-top: 10px;
-  box-shadow:
-    6px 6px 15px #1c1c1f,
-    -6px -6px 15px #2f2f34;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 18px;
+  padding: 12px;
 }
 
-/* Título das seções */
-h2 {
-  color: #fff;
-  text-shadow: 0 0 5px #00f9ff;
-  margin-bottom: 20px;
+.sucesso {
+  color: var(--cor-sucesso);
+  font-weight: bold;
 }
 
-/* Botões adicionais */
-.btn-novo-sorteio {
-  background-color: #28a745;
-  box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
-}
-
-.btn-resetar-tudo {
-  background-color: #dc3545;
-  box-shadow: 0 0 10px #dc3545, 0 0 20px #dc3545;
+p,
+label {
+  color: var(--cor-texto-secundario);
 }
 
 /* Responsivo */
@@ -114,7 +157,8 @@ h2 {
     align-items: center;
   }
 
-  .form-container, .equipes-container {
+  .form-container,
+  .equipes-container {
     width: 90%;
   }
 }

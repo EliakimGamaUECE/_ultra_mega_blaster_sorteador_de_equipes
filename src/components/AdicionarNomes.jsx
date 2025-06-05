@@ -18,26 +18,25 @@ const AdicionarNomes = () => {
   };
 
   return (
-    <form onSubmit={handleAdicionarTodos}>
-      <label style={{ fontWeight: "bold", marginBottom: "5px", display: "block" }}>
+    <form onSubmit={handleAdicionarTodos} className="adicionar-nomes-form">
+      <label className="adicionar-nomes-label">
         Cole os nomes abaixo (um por linha):
       </label>
       <textarea
+        style={{ marginTop: "10px" }}
         rows="10"
-        placeholder="Ex: João\nMaria\nPedro"
+        placeholder="Ex: João
+    Maria
+    Pedro"
         value={entrada}
         onChange={(e) => setEntrada(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px",
-          fontSize: "16px",
-          resize: "vertical",
-          boxSizing: "border-box",
-        }}
+        className="adicionar-nomes-textarea"
       />
-      <button type="submit" style={{ marginTop: "10px", padding: "8px 16px", fontSize: "16px" }}>
-        Adicionar Todos
-      </button>
+      <div>
+        <button type="submit" className="adicionar-nomes-btn">
+          Adicionar Todos
+        </button>
+      </div>
     </form>
   );
 };
